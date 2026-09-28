@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bharath chandh - personal portfolio">
+<title>Bharath's Profile | Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ font-family:Arial,Helvetica,sans-serif;background:#070b16;color:#edf4ff;
+ line-height:1.6;overflow-x:hidden
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+ background-image:radial-gradient(#fff 1px,transparent 1px);background-size:55px 55px
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+section{padding:90px 0;position:relative;z-index:1}
+.section-title{font-size:clamp(32px,5vw,48px);margin-bottom:12px}
+.section-subtitle{color:#9caecc;margin-bottom:35px}
+nav{
+ position:sticky;top:0;z-index:20;background:#070b16e8;backdrop-filter:blur(14px);
+ border-bottom:1px solid #6c8dff2b
+}
+.nav-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:22px;font-weight:800;color:#8eb4ff}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:#bdc9dd;font-size:15px;transition:.25s}
+.nav-links a:hover{color:#fff;transform:translateY(-2px)}
+.hero{min-height:92vh;display:grid;place-items:center;text-align:center;padding:100px 0 80px}
+.hero-content{max-width:850px}
+.tag{display:inline-block;padding:8px 16px;border:1px solid #6e9aff55;border-radius:50px;
+ background:#10204a99;color:#9fc0ff;font-size:13px;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(48px,10vw,100px);line-height:.98;margin:25px 0 18px;
+ text-shadow:0 0 35px #4d7cff66}
+.hero h2{font-size:clamp(22px,4vw,34px);color:#91b8ff}
+.hero p{max-width:680px;margin:20px auto;color:#aebbd0;font-size:18px}
+.buttons{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:12px 22px;border-radius:12px;border:1px solid #7296ff66;transition:.3s}
+.btn.primary{background:#4b74e8;color:#fff}
+.btn:hover{transform:translateY(-5px);box-shadow:0 12px 30px #0008}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{
+ background:linear-gradient(145deg,#111c32ee,#09101eee);border:1px solid #698eff30;
+ border-radius:20px;padding:26px;box-shadow:0 15px 45px #0007;transition:.3s
+}
+.card:hover{transform:translateY(-8px);border-color:#769aff77}
+.card h3{color:#8eb5ff;margin-bottom:9px}
+.card p{color:#bdc8da}
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:25px}
+.info-list{list-style:none}
+.info-list li{padding:10px 0;border-bottom:1px solid #ffffff10;color:#cbd5e4}
+.info-list strong{color:#fff}
+.skill-card{text-align:center}
+.skill-icon{font-size:38px;margin-bottom:8px}
+.skill-card .bar{height:8px;background:#17233c;border-radius:20px;margin-top:16px;overflow:hidden}
+.skill-card .bar span{display:block;height:100%;background:linear-gradient(90deg,#527cff,#7ee6ff);border-radius:20px}
+.project-icon{font-size:45px;margin-bottom:12px}
+.tech{display:inline-block;margin-top:15px;margin-right:6px;padding:5px 10px;border-radius:20px;
+ background:#162746;color:#9ec1ff;font-size:12px}
+.project-links{margin-top:18px;color:#9fc0ff}
+.education{border-left:3px solid #648bff;padding-left:25px}
+.timeline-item{margin-bottom:25px}
+.timeline-item .date{color:#7fa2ed;font-size:13px}
+.contact-box{text-align:center;max-width:760px;margin:auto}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:25px}
+.contact-link{padding:14px 20px;border-radius:13px;background:#101d35;border:1px solid #6b8cff40}
+footer{text-align:center;padding:35px 20px;color:#7f8da4;border-top:1px solid #ffffff0d}
+.rocket-section{min-height:900px;display:grid;place-items:center;overflow:hidden}
+.rocket-space{width:340px;height:750px;position:relative}
+.rocket{
+ position:absolute;left:50%;top:100px;width:116px;height:330px;transform:translateX(-50%);
+ animation:rocketFloat 3s ease-in-out infinite;filter:drop-shadow(0 20px 25px #000)
+}
+.nose{position:absolute;top:0;width:116px;height:88px;border-radius:60px 60px 20px 20px;
+ background:linear-gradient(135deg,#fff,#9ec4ff 55%,#496ec5)}
+.body{position:absolute;top:68px;left:9px;width:98px;height:180px;border-radius:22px;
+ background:linear-gradient(90deg,#314d89,#f6faff 27%,#a7c5ff 65%,#2c477f)}
+.window{position:absolute;top:93px;left:34px;width:48px;height:48px;border-radius:50%;
+ border:5px solid #e7f1ff;background:radial-gradient(circle at 30% 25%,#e6fbff,#3184d2 50%,#122752)}
+.fin{position:absolute;top:205px;width:42px;height:78px;background:#df5871}
+.fin.left{left:-25px;clip-path:polygon(100% 0,100% 100%,0 100%,50% 45%)}
+.fin.right{right:-25px;clip-path:polygon(0 0,100% 45%,50% 100%,0 100%)}
+.engine{position:absolute;top:238px;left:25px;width:66px;height:38px;background:#253b68;border-radius:0 0 15px 15px}
+.flame{position:absolute;top:260px;left:33px;width:50px;height:125px;
+ background:linear-gradient(#fff,#7cecff 20%,#428cff 55%,transparent);
+ clip-path:polygon(50% 100%,0 35%,25% 50%,20% 0,50% 40%,75% 0,72% 52%,100% 35%);
+ animation:flame .15s infinite alternate}
+.rocket-name{position:absolute;top:151px;left:50%;transform:translateX(-50%) rotate(-90deg);
+ color:#142955;font-weight:900;font-size:12px;letter-spacing:2px}
+.rocket-labels{position:absolute;top:430px;left:50%;transform:translateX(-50%);width:310px;text-align:center}
+.rocket-labels div{margin:11px;padding:13px;border-radius:14px;background:#0d1b32dd;border:1px solid #7197ff44}
+.rocket-labels .one{color:#ffb28c}.rocket-labels .two{color:#ffd66e}.rocket-labels .three{color:#83e8ff}
+@keyframes rocketFloat{0%,100%{transform:translateX(-50%) translateY(0) rotate(-2deg)}
+50%{transform:translateX(-50%) translateY(-25px) rotate(2deg)}}
+@keyframes flame{to{transform:scale(.86,1.15)}}
+@media(max-width:760px){
+ .nav-inner{flex-direction:column;padding:15px 0}
+ .nav-links{gap:13px;flex-wrap:wrap;justify-content:center}
+ .about-grid{grid-template-columns:1fr}
+ section{padding:70px 0}
+}
+@media(max-width:480px){.nav-links{font-size:13px;gap:9px}.rocket-space{transform:scale(.88)}}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="container nav-inner">
+  <a class="logo" href="#home">BHARATH</a>
+  <ul class="nav-links">
+   <li><a href="#about">About</a></li>
+   <li><a href="#skills">Skills</a></li>
+   <li><a href="#projects">Projects</a></li>
+   <li><a href="#education">Education</a></li>
+   <li><a href="#contact">Contact</a></li>
+  </ul>
+ </div>
+</nav>
+
+<header class="hero" id="home">
+ <div class="hero-content container">
+  <span class="tag">Personal Portfolio</span>
+  <h1>Bharath chandh</h1>
+  <h2>Computer Science & AI Student</h2>
+  <p>I am a student at Scaler School of Technology, learning programming and web development by building projects and experimenting with new ideas.</p>
+  <div class="buttons">
+   <a class="btn primary" href="#projects">View My Work</a>
+   <a class="btn" href="#contact">Contact Me</a>
+  </div>
+ </div>
+</header>
+
+<section id="about">
+ <div class="container">
+  <h2 class="section-title">About Me</h2>
+  <p class="section-subtitle">Who I am and what I am learning</p>
+  <div class="about-grid">
+   <div class="card">
+    <h3>Hello! I'm Bharath 👋</h3>
+    <p>I am 18 years old and currently studying Computer Science and Artificial Intelligence at Scaler School of Technology. I enjoy learning through hands-on projects, especially web development and programming.</p>
+    <br>
+    <p>My current learning journey includes HTML, CSS, Java up to arrays, and Python fundamentals.</p>
+   </div>
+   <div class="card">
+    <ul class="info-list">
+     <li><strong>Name:</strong> Bharath chandh</li>
+     <li><strong>Age:</strong> 18</li>
+     <li><strong>DOB:</strong> 14/06/2008</li>
+     <li><strong>College:</strong> Scaler School of Technology</li>
+     <li><strong>Branch:</strong> CS and AI</li>
+     <li><strong>Location:</strong> Andhra Pradesh</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <h2 class="section-title">Skills</h2>
+  <p class="section-subtitle">Technologies I know and am learning</p>
+  <div class="grid">
+   <div class="card skill-card">
+    <div class="skill-icon">🌐</div><h3>HTML</h3><p>Semantic structure, headings, links, sections, forms and page layout.</p>
+    <div class="bar"><span style="width:90%"></span></div>
+   </div>
+   <div class="card skill-card">
+    <div class="skill-icon">🎨</div><h3>CSS</h3><p>Box model, Flexbox, Grid, responsive design, transitions and animations.</p>
+    <div class="bar"><span style="width:85%"></span></div>
+   </div>
+   <div class="card skill-card">
+    <div class="skill-icon">☕</div><h3>Java</h3><p>Java fundamentals including variables, conditions, loops, methods and arrays.</p>
+    <div class="bar"><span style="width:75%"></span></div>
+   </div>
+   <div class="card skill-card">
+    <div class="skill-icon">🐍</div><h3>Python</h3><p>Python fundamentals and problem-solving practice.</p>
+    <div class="bar"><span style="width:68%"></span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="container">
+  <h2 class="section-title">Projects</h2>
+  <p class="section-subtitle">Projects that demonstrate what I have learned</p>
+  <div class="grid">
+   <article class="card">
+    <div class="project-icon">🎮</div><h3>Flexbox Game Interface</h3>
+    <p>A small interactive-style game interface designed to practice Flexbox, spacing, backgrounds, borders and the CSS box model.</p>
+    <span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Flexbox</span>
+   </article>
+   <article class="card">
+    <div class="project-icon">📱</div><h3>Responsive Portfolio</h3>
+    <p>A responsive personal portfolio designed to work across mobile, tablet and desktop screens using Grid, Flexbox and media queries.</p>
+    <span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Grid</span>
+   </article>
+   <article class="card">
+    <div class="project-icon">🚀</div><h3>CSS Rocket Animation</h3>
+    <p>A space-themed CSS animation featuring a floating 3D-style rocket and animated flame, demonstrating transforms, transitions and keyframes.</p>
+    <span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Animation</span>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="education">
+ <div class="container">
+  <h2 class="section-title">Education / Experience</h2>
+  <p class="section-subtitle">My current learning journey</p>
+  <div class="card education">
+   <div class="timeline-item">
+    <div class="date">CURRENT</div>
+    <h3>Scaler School of Technology</h3>
+    <p>Computer Science and Artificial Intelligence</p>
+   </div>
+   <div class="timeline-item">
+    <div class="date">LEARNING</div>
+    <h3>Web Development Journey</h3>
+    <p>Currently learning HTML and CSS and building projects to understand responsive layouts, Flexbox, Grid and CSS animations.</p>
+   </div>
+   <div class="timeline-item">
+    <div class="date">PROGRAMMING</div>
+    <h3>Java & Python</h3>
+    <p>Learning Java up to arrays and developing Python fundamentals through practice and problem solving.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="rocket-section" id="journey">
+ <div class="container" style="text-align:center">
+  <h2 class="section-title">My Coding Journey 🚀</h2>
+  <p class="section-subtitle">Launching from web development into programming</p>
+  <div class="rocket-space">
+   <div class="rocket">
+    <div class="nose"></div><div class="body"></div><div class="window"></div>
+    <div class="rocket-name">BHARATH</div>
+    <div class="fin left"></div><div class="fin right"></div><div class="engine"></div><div class="flame"></div>
+   </div>
+   <div class="rocket-labels">
+    <div class="one">HTML + CSS</div>
+    <div class="two">JAVA</div>
+    <div class="three">PYTHON</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="card contact-box">
+   <h2 class="section-title">Let's Connect</h2>
+   <p class="section-subtitle">Feel free to connect with me about web development, programming and projects.</p>
+   <div class="contact-links">
+    <a class="contact-link" href="#about">📍 Address</a>
+    <a class="contact-link" href="https://github.com/" target="_blank" rel="noopener">💻 GitHub</a>
+    <a class="contact-link" href="#home">⬆ Back to Top</a>
+   </div>
+   <p style="margin-top:22px;color:#8998ae">Vikramapuram Village, Devari Street, Paravathipuram District, Andhra Pradesh</p>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <p>© 2026 Bharath chandh · Built with HTML & CSS</p>
+</footer>
+
+</body>
+</html>
